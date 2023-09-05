@@ -24,7 +24,7 @@ public class Television extends Appliance {
         System.out.println("Ingresar tamaño del televisor (pulgadas):");
         int size = sc.nextInt();
         
-        System.out.println("¿Tiene sintonizador (S/N)?:");
+        System.out.println("¿Tiene sintonizador TDT (S/N)?:");
         boolean tdtTuner = sc.next().toUpperCase().equals("S");
         
         return new Television(
