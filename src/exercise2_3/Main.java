@@ -8,7 +8,21 @@ public class Main {
         ArrayList<Appliance> appliances = new ArrayList<>();
         addAppliences(appliances);
         appliances.forEach(System.out::println);
-        System.out.print("\nPrecio total: $");
+        
+        int washingMachinesTotalPrice = 0;
+        int TelevisionsTotalPrice = 0;
+        
+        for (Appliance appliance : appliances) {
+            if (appliance instanceof WashingMachine)
+                washingMachinesTotalPrice += appliance.getPrice();
+            else if (appliance instanceof Television)
+                TelevisionsTotalPrice += appliance.getPrice();
+        }
+        
+        System.out.println("\nCosto total lavadoras: $" + washingMachinesTotalPrice);
+        System.out.println("Costo total televisores: $" + TelevisionsTotalPrice);
+        
+        System.out.print("\nPrecio total electrodomésticos: $");
         System.out.println(appliances.stream().mapToInt(Appliance::getPrice).sum());
         
         System.out.println();
